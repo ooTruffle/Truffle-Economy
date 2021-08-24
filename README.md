@@ -1,6 +1,6 @@
 # Reuben Economy
 <div align="center"> 
-Discord Bot for adding on to  [unb] (unbelievaboat.com/)
+Discord Bot for adding on to  [unb] (https://unbelievaboat.com)
 
 <br>
     <a href="https://discord.gg/sBFWp6ZfMb">
