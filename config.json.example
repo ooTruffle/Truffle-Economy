@@ -1,0 +1,5 @@
+{
+    "prefix": "bb!", //bot prefix
+    "token": "", //from discord dev portal
+    "unbToken": "" //From https://unbelievaboat.com/applications
+}
