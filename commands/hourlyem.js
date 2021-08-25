@@ -9,8 +9,9 @@ module.exports = {
     name: 'hourlyem',
     description: 'hourly but with a embed',
     async execute(message) {
+		if(!message.member.roles.cache.has("718451711525781534")) return message.channel.send("Sorry this is a testing command")
 		const payout = random(100,200);
-		await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "Waited 1 Hour")
+		await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "Waited 1 Hour (test)")
 		const daily = new Discord.MessageEmbed()
         .setColor('#00bfff')
         .setDescription(`You waited 24 Hours for ${payout} <a:Beachball:727421930873028638>  ||Thats more then i get paid||`)
