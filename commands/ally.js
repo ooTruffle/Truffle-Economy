@@ -9,7 +9,7 @@ module.exports = {
     name: 'ally',
     description: 'allys paycheck',
     async execute(message) {
-        if(!message.member.roles.cache.has("780199373001850910")) return message.channel.send("Sorry your not a ally so you cant run this command ||become one by dming <@!807954044441853976>|| ")
+        if(!message.member.roles.cache.has("780199373001850910")) return message.channel.send("Sorry your not a ally so you cant run this command ||become one by dming <@!807954044441853976>|| This command will only work here https://discord.gg/sBFWp6ZfMb at this point in time")
         var cooldown = getCooldown("ally", message.guild.id, message.author.id);
         if(cooldown != null){
             //There is still a cooldown, tell the user something

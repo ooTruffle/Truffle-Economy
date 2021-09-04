@@ -25,7 +25,7 @@ client.once('ready', () => {
 });
 //Bot Status
 client.on('ready', () => {
-client.user.setActivity(`People Empty there balance`, { type: 'WATCHING' });
+client.user.setActivity(`People Empty there balance || rd!help`, { type: 'WATCHING' });
 });
 // Listening for messages
 client.on('message', message => {
