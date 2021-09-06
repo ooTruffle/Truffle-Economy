@@ -1,12 +1,13 @@
 const fs = require('fs');
 const db = require("./database.js")
 // require the discord.js module
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+
 
 // Look for our config file
 const { prefix, token, unbToken } = require('./config.json');
 // create a new Discord client
-const client = new Discord.Client();
+const client = new Discord.Client({ intents: ['GUILDS' , 'GUILD_MESSAGES' , 'GUILD_PRESENCES'] });
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
