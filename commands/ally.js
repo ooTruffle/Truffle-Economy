@@ -14,6 +14,12 @@ module.exports = {
         if(cooldown != null){
             //There is still a cooldown, tell the user something
             //The cooldown variable is the date when the cooldown ends
+            const cooldown = new Discord.MessageEmbed()
+			.setColor('#00bfff')
+			.setDescription(`Sorry you still have a cooldown`)
+			.setTimestamp()
+			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
+			message.channel.send({ embeds: [cooldown] });
             return;
         }
         const payout = random(200,400);
@@ -24,6 +30,6 @@ module.exports = {
         .setDescription(`Thanks for being a awesome server ally here's ${payout} <a:Beachball:727421930873028638>`)
         .setTimestamp()
 		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
-        message.channel.send(ally);
+        message.channel.send({ embeds: [ally] });
     },
 }; 

@@ -19,7 +19,7 @@ module.exports = {
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
 			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
-			message.channel.send(cooldown)
+			message.channel.send({ embeds: [cooldown] });
             return;
         }
         const payout = random(200,400);
@@ -30,6 +30,6 @@ module.exports = {
         .setDescription(`Thanks for being a awesome server Booster here's ${payout} <a:Beachball:727421930873028638>`)
         .setTimestamp()
 		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
-        message.channel.send(nitro);
+        message.channel.send({ embeds: [nitro] });
     },
 }; 

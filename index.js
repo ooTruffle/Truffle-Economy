@@ -7,7 +7,7 @@ const Discord = require("discord.js");
 // Look for our config file
 const { prefix, token, unbToken } = require('./config.json');
 // create a new Discord client
-const client = new Discord.Client({ intents: ['GUILDS' , 'GUILD_MESSAGES' , 'GUILD_PRESENCES'] });
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGES"], partials: ["CHANNEL"] });
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -19,17 +19,24 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 const cooldowns = new Discord.Collection();
+const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 // when the client is ready, run this code
 // this event will only trigger one time after logging in
-client.once('ready', () => {
-	console.log('Ready!');
-});
+for (const file of eventFiles) {
+	const event = require(`./events/${file}`);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	} else {
+		client.on(event.name, (...args) => event.execute(...args));
+	}
+}
+
 //Bot Status
 client.on('ready', () => {
 client.user.setActivity(`People Empty there balance || rd!help`, { type: 'WATCHING' });
 });
 // Listening for messages
-client.on('message', message => {
+client.on('messageCreate', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);

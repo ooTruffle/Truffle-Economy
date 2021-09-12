@@ -1,6 +1,5 @@
 const {getCooldown, addCooldown} = require('../database.js') //relative path to the database.js file
 const Discord = require('discord.js');
-const client = new Discord.Client();
 function random(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
