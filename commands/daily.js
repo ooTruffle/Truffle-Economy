@@ -18,7 +18,7 @@ module.exports = {
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
 			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
-			message.channel.send(cooldown)
+			message.channel.send({ embeds: [cooldown] });
             return;
         }
 		const payout = random(1000,2000);
@@ -29,6 +29,6 @@ module.exports = {
         .setDescription(`You waited 24 Hours for ${payout} <a:Beachball:727421930873028638> ||Thats more then i get paid||`)
 		.setTimestamp()
 		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
-        message.channel.send(daily)
+        message.channel.send({ embeds: [daily] });
 	},
 };
