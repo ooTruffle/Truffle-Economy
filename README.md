@@ -11,4 +11,3 @@ Discord Bot for adding on to  unbelievaboat https://unbelievaboat.com
     </a>
 <br>
 This is a recode of the repo https://github.com/kyle95wm/bean-economy felt i should credit them here
-This is for Discord,js version 12
