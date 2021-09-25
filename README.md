@@ -10,6 +10,5 @@ Discord Bot for adding on to  unbelievaboat https://unbelievaboat.com
     <img src="https://img.shields.io/youtube/channel/subscribers/UCMbaILdqA66BPoXgwtl0sYw?label=youtube&logo=youtube&style=for-the-badge" alt="Youtube">
     </a>
 <br>
-Want to host it for free
-join https://discord.gg/XCRBty8nvG
 This is a recode of the repo https://github.com/kyle95wm/bean-economy felt i should credit them here
+This is for Discord.js Version 12
