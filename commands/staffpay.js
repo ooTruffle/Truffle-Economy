@@ -9,17 +9,17 @@ module.exports = {
     name: 'staffpay',
     description: 'How the staff gats there paycheck',
     async execute(message) {
-        if(!message.member.roles.cache.has("784617991697465375")) return message.channel.send("Sorry your not a staff member you cant run this command")
+        if(!message.member.roles.cache.some(role => role.name === '🚔》Staff')) return message.channel.send("Sorry, you're not a staff member; therefore you can't use this command.")//if role name = 🚔》Staff the command can run
         var cooldown = getCooldown("staffpay", message.guild.id, message.author.id);
         if(cooldown != null){
             //There is still a cooldown, tell the user something
             //The cooldown variable is the date when the cooldown ends
-            const cooldown = new Discord.MessageEmbed()
+            const cooldown = new Discord.MessageEmbed() //make the embed
 			.setColor('#00bfff')
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
 			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
-			message.channel.send({ embeds: [cooldown] });
+			message.channel.send({ embeds: [cooldown] }); //send the embed to the channel the command was ran in
             return;
         }
         const payout = random(200,400);

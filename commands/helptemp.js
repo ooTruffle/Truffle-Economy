@@ -1,10 +1,4 @@
-const {getCooldown, addCooldown} = require('../database.js') //relative path to the database.js file
 const Discord = require('discord.js');
-function random(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
 module.exports = {
 	name: 'help',
 	description: 'Tempoary',
@@ -15,9 +9,10 @@ module.exports = {
         .setDescription(`Bot's Current Commands`)
         .addFields(
             { name: '`re!ping`', value: 'Displays the bots Ping', inline: true },
-            { name: 're!help', value: 'Displays this', inline: true },
+            { name: '`re!help`', value: 'Displays this', inline: true },
+			{ name: '`re!bug`', value: 'Explains how to Report Bugs', inline: true },
+			{ name: '`re!info`', value: 'Displays info for the bot', inline: true },
         )
-        message.channel.send({ embeds: [info] });
         const unb = new Discord.MessageEmbed()
         .setColor('#00bfff')
         .setDescription(`Unb giveing Commands`)
@@ -29,9 +24,9 @@ module.exports = {
             { name: '`re!ally`', value: 'Ever 24H', inline: true },
             { name: '`re!partner`', value: 'Ever 24H', inline: true },
             { name: '`re!staffpay`', value: 'Ever 24H', inline: true },
-        )
+        ) //add's a gap between each command
 		.setTimestamp()
-		.setFooter('Prefix is `re!`' );
-        message.channel.send({ embeds: [unb] });
+		.setFooter('Prefix is re!' );
+        message.channel.send({ embeds: [info, unb] });
 	},
 };

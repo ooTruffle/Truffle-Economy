@@ -23,8 +23,8 @@ module.exports = {
             return;
         }
         const payout = random(200,400);
-        await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "For being a awesome ally")
-        addCooldown("ally", message.guild.id, message.author.id, 24 * 3600);
+        await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "For being a awesome ally")//tells the api to increase the users cash balence
+        addCooldown("ally", message.guild.id, message.author.id, 24 * 3600); //adds a cooldown to the DB 
         const ally = new Discord.MessageEmbed()
         .setColor('#93bfe6')
         .setDescription(`Thanks for being a awesome server ally here's ${payout} <a:Beachball:727421930873028638>`)

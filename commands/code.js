@@ -20,8 +20,8 @@ module.exports = {
 			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
 			message.channel.send({ embeds: [cooldown] });
             return;
-        }
-		const payout = random(50,100);
+        } //if there is no cooldown contimue with the code if there is send a msg indacateing that they still have a cooldown and stop 
+		const payout = random(50,100); //chose a random number between 50 - 100
 		await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "Did some Codeing")
         addCooldown("code", message.guild.id, message.author.id,  24 * 1800);
 		const code = new Discord.MessageEmbed()
