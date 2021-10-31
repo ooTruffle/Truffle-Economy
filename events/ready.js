@@ -4,6 +4,6 @@ module.exports = {
 	once: true,
 	execute(client) {
 		console.log(`Ready! Logged in as ${client.user.tag} on Discord`);
-		client.channels.cache.get('807872325848399903').send('Bot Has Successfully Started')
+		client.channels.cache.get('889344944395911198').send('Bot Has Successfully Started')
 	},
 };
