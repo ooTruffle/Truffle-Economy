@@ -1,9 +1,9 @@
 const {getCooldown, addCooldown} = require('../database.js') //relative path to the database.js file
 module.exports = {
     name: 'index',
-    description: 'allys paycheck',
+    description: 'List commands',
     async execute(message) {
-    var content = ["daily","hourly","books","code"].map(e=>{
+    var content = ["daily","hourly","books","code","nitro","ally","partner","staffpay"].map(e=>{
     var cooldown = getCooldown(e, message.guild.id, message.author.id);
     if(cooldown == null) return [0, "🟢 "+e]; // Pass some info into the next part, so it knows how to sort the commands
     else return [1, "🟡 "+e+" - <t:"+Math.floor(new Date(cooldown.endsat).getTime()/1000)+":R>"]; // Showing the cooldown as a Discord timestamp should make this easier
@@ -14,5 +14,8 @@ module.exports = {
     .join("\n"); // Join the text together with \n
   
   message.channel.send(`${content}`) //D.JS v13 compatible
+  message.channel.send(`----------------`)      
+  message.channel.send(`🟢 is a command you can run`)
+  message.channel.send(`🟡 is a command that still has a cooldown`)
 }
 }
