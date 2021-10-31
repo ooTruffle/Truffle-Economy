@@ -12,6 +12,7 @@ module.exports = {
             { name: '`re!help`', value: 'Displays this', inline: true },
 			{ name: '`re!bug`', value: 'Explains how to Report Bugs', inline: true },
 			{ name: '`re!info`', value: 'Displays info for the bot', inline: true },
+            { name: '`re!index`', value: 'Displays all unb commands and there cooldowns', inline: true },
         )
         const unb = new Discord.MessageEmbed()
         .setColor('#00bfff')
