@@ -1,5 +1,6 @@
 const {getCooldown, addCooldown} = require('../database.js') //relative path to the database.js file
 const Discord = require('discord.js');
+const { unbemote } = require('../config.json');
 function random(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -18,18 +19,18 @@ module.exports = {
 			.setColor('#00bfff')
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
-			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
+			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
 			message.channel.send({ embeds: [cooldown] });
             return;
         }
         const payout = random(200,400);
         await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "For Boosting the server")
-        addCooldown("nitro", message.guild.id, message.author.id, 24 * 3600);
+        addCooldown("nitro", message.guild.id, message.author.id, 48 * 3600);
         const nitro = new Discord.MessageEmbed()
         .setColor('#93bfe6')
-        .setDescription(`Thanks for being a awesome server Booster here's ${payout} <a:Beachball:727421930873028638>`)
+        .setDescription(`Thanks for being a awesome server Booster here's ${payout} ${unbemote}`)
         .setTimestamp()
-		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
+		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
         message.channel.send({ embeds: [nitro] });
     },
 }; 

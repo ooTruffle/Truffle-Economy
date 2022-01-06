@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "better-sqlite3": "^7.4.3",
+    "discord.js": "^13.2.0",
+    "unb-api": "^1.2.3"
+  }
+}

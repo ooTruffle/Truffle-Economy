@@ -1,5 +1,6 @@
 const {getCooldown, addCooldown} = require('../database.js') //relative path to the database.js file
 const Discord = require('discord.js');
+const { unbemote } = require('../config.json');
 function random(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
@@ -17,7 +18,7 @@ module.exports = {
 			.setColor('#00bfff')
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
-			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
+			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
 			message.channel.send({ embeds: [cooldown] });
             return;
         }
@@ -26,9 +27,9 @@ module.exports = {
         addCooldown("hourly", message.guild.id, message.author.id, 60 * 60);
         const hourly = new Discord.MessageEmbed()
         .setColor('#00bfff')
-        .setDescription(`You waited 1 Hour for ${payout} <a:Beachball:727421930873028638> ||What a rip off||`)
+        .setDescription(`You waited 1 Hour for ${payout} ${unbemote} ||What a rip off||`)
         .setTimestamp()
-		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
+		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
         message.channel.send({ embeds: [hourly] });
 
     },

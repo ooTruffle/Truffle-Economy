@@ -1,5 +1,6 @@
 const {getCooldown, addCooldown} = require('../database.js') //relative path to the database.js file
 const Discord = require('discord.js');
+const { unbemote } = require('../config.json');
 function random(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -9,7 +10,7 @@ module.exports = {
     name: 'ally',
     description: 'allys paycheck',
     async execute(message) {
-        if(!message.member.roles.cache.has("780199373001850910")) return message.channel.send("Sorry your not a ally so you cant run this command ||become one by dming <@!807954044441853976>|| This command will only work here https://discord.gg/sBFWp6ZfMb at this point in time")
+        if(!message.member.roles.cache.has("780199373001850910")) return message.channel.send("Sorry your not a ally so you cant run this command ||become one by dming the Server Owner ||")
         var cooldown = getCooldown("ally", message.guild.id, message.author.id);
         if(cooldown != null){
             //There is still a cooldown, tell the user something
@@ -18,18 +19,18 @@ module.exports = {
 			.setColor('#00bfff')
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
-			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
+			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
 			message.channel.send({ embeds: [cooldown] });
             return;
         }
         const payout = random(200,400);
         await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "For being a awesome ally")//tells the api to increase the users cash balence
-        addCooldown("ally", message.guild.id, message.author.id, 24 * 3600); //adds a cooldown to the DB 
+        addCooldown("ally", message.guild.id, message.author.id, 48 * 3600); //adds a cooldown to the DB 
         const ally = new Discord.MessageEmbed()
         .setColor('#93bfe6')
-        .setDescription(`Thanks for being a awesome server ally here's ${payout} <a:Beachball:727421930873028638>`)
+        .setDescription(`Thanks for being a awesome server ally here's ${payout} ${unbemote}`)
         .setTimestamp()
-		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/4f25f6d9d083ecae69d6f931e5b0b4ac.webp?size=256' );
+		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
         message.channel.send({ embeds: [ally] });
     },
 }; 

@@ -1,0 +1,36 @@
+const {getCooldown, addCooldown} = require('../database.js') //relative path to the database.js file
+const Discord = require('discord.js');
+const { unbemote } = require('../config.json');
+function random(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+module.exports = {
+    name: 'christmas',
+    description: 'Presents',
+    async execute(message) {
+        if(!message.member.roles.cache.has("914070810594000900")) return message.channel.send("You must have the Christmas 2021 role in order to use this command grab it from <#756259562457399336>")
+        var cooldown = getCooldown("christmas", message.guild.id, message.author.id);
+        if(cooldown != null){
+            //There is still a cooldown, tell the user something
+            //The cooldown variable is the date when the cooldown ends
+            const cooldown = new Discord.MessageEmbed()
+			.setColor('#00bfff')
+			.setDescription(`Sorry you still have a cooldown`)
+			.setTimestamp()
+			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/e861f992cbe863696736c0227c78e279.png?size=1024' );
+			message.channel.send({ embeds: [cooldown] });
+            return;
+        }
+        const payout = random(100,200);
+        await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "Opened some Presents")//tells the api to increase the users cash balence
+        addCooldown("christmas", message.guild.id, message.author.id, 1 * 1800); //adds a cooldown to the DB 
+        const christmas = new Discord.MessageEmbed()
+        .setColor('#00ff6c')
+        .setDescription(`You opened a gift and got ${payout} ${unbemote}`)
+        .setTimestamp()
+		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/e861f992cbe863696736c0227c78e279.png?size=1024' );
+        message.channel.send({ embeds: [christmas] });
+    },
+}; 
