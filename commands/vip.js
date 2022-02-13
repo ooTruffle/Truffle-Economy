@@ -1,4 +1,4 @@
-const amari = new (require('amaribot.js').AmariBot)({amari token})
+const amari = new (require('amaribot.js').AmariBot)(put amari token here)
 const {getCooldown, addCooldown} = require('../database.js') //relative path to the database.js file
 const Discord = require('discord.js');
 const { unbemote } = require('../config.json');

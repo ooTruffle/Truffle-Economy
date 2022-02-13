@@ -1,7 +1,8 @@
 # Reuben Economy
 <div align="center"> 
 Discord Bot for adding on to  unbelievaboat https://unbelievaboat.com
-
+<div align="center"> 
+This also supports pulling from the amaribot api add your amari key to vip.js for the command to work
 <br>
     <a href="https://discord.gg/sBFWp6ZfMb">
     <img src="https://img.shields.io/discord/718450019899801702?color=%235865f2&label=Discord&logo=Discord&style=for-the-badge" alt="Discord">
@@ -11,3 +12,5 @@ Discord Bot for adding on to  unbelievaboat https://unbelievaboat.com
     </a>
 <br>
 This is a recode of the repo https://github.com/kyle95wm/bean-economy felt i should credit them here
+
+
