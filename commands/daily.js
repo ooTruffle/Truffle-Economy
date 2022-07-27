@@ -18,18 +18,28 @@ module.exports = {
 			.setColor('#00bfff')
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
-			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
-			message.channel.send({ embeds: [cooldown] });
+			.setFooter('Reply by ReubenDollmanYT#4106', 'https://images-ext-1.discordapp.net/external/vNk-U4RsiwjXTLQNe9KnTYmQ_B69E4XEyA9bOUgrxRg/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/781305692371157034/06e0739ec3da06c65e2022359317ddf3.png' );
+			message.channel.send({ embeds: [cooldown], reply: {
+    messageReference: message,
+    failIfNotExists: false
+}, allowedMentions: {
+    repliedUser: false
+} });
             return;
         }
-		const payout = random(1000,2000);
+		const payout = random(100,200);
 		await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "Waited 1 Day")
         addCooldown("daily", message.guild.id, message.author.id,  24 * 3600);
 		const daily = new Discord.MessageEmbed()
         .setColor('#00bfff')
         .setDescription(`You waited 24 Hours for ${payout} ${unbemote} ||Thats more then i get paid||`)
 		.setTimestamp()
-		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
-        message.channel.send({ embeds: [daily] });
+		.setFooter('Reply by ReubenDollmanYT#4106', 'https://images-ext-1.discordapp.net/external/vNk-U4RsiwjXTLQNe9KnTYmQ_B69E4XEyA9bOUgrxRg/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/781305692371157034/06e0739ec3da06c65e2022359317ddf3.png' );
+        message.channel.send({ embeds: [daily], reply: {
+    messageReference: message,
+    failIfNotExists: false
+}, allowedMentions: {
+    repliedUser: false
+} });
 	},
 };

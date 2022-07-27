@@ -19,8 +19,13 @@ module.exports = {
 			.setColor('#00bfff')
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
-			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
-			message.channel.send({ embeds: [cooldown] }); //send the embed to the channel the command was ran in
+			.setFooter('Reply by ReubenDollmanYT#4106', 'https://images-ext-1.discordapp.net/external/vNk-U4RsiwjXTLQNe9KnTYmQ_B69E4XEyA9bOUgrxRg/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/781305692371157034/06e0739ec3da06c65e2022359317ddf3.png' );
+			message.channel.send({ embeds: [cooldown], reply: {
+    messageReference: message,
+    failIfNotExists: false
+}, allowedMentions: {
+    repliedUser: false
+} }); //send the embed to the channel the command was ran in
             return;
         }
         const payout = random(200,400);
@@ -30,7 +35,12 @@ module.exports = {
         .setColor('#00bfff')
         .setDescription(`Thanks for being a awsome staff member here is ${payout} ${unbemote}`)
         .setTimestamp()
-		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/a40155300210c15023ed94378f502e4c.png?size=1024' );
-        message.channel.send({ embeds: [staffpay] });
+		.setFooter('Reply by ReubenDollmanYT#4106', 'https://images-ext-1.discordapp.net/external/vNk-U4RsiwjXTLQNe9KnTYmQ_B69E4XEyA9bOUgrxRg/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/781305692371157034/06e0739ec3da06c65e2022359317ddf3.png' );
+        message.channel.send({ embeds: [staffpay], reply: {
+    messageReference: message,
+    failIfNotExists: false
+}, allowedMentions: {
+    repliedUser: false
+} });
     },
 }; 

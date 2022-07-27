@@ -1,5 +1,8 @@
 {
-    "prefix": "bb!", //bot prefix
-    "token": "", //from discord dev portal
-    "unbToken": "" //From https://unbelievaboat.com/applications
+    "prefix": "re!",
+    "token": "{discord Token}",
+    "unbToken": "{UNB Token}",
+    "unbemote": "{Emoji used for UNB}",
+    "amaritoken": "{Token for AmariBot (used for vip)",
+	"ownerID": "{Bot owners id}"
 }

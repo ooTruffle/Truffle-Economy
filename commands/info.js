@@ -10,6 +10,7 @@ module.exports = {
         .addFields(
             { name: 'Bots Owner', value: '<@!781305692371157034>\nReubenDollmanYT#4106', inline: true },
             { name: 'Bot Prefix', value: `\`${prefix}\``, inline: true },  
+			{ name: 'UNB Emoji', value: `${unbemote}`, inline: true }, 
 
 			{ name: '\u200B', value: '\u200B' },// adds a gap betwen the next line
 			{ name: '\u200B', value: '\u200B' },// adds a gap betwen the next line
@@ -17,6 +18,11 @@ module.exports = {
 			{ name: 'Open Source Code Used', value: '[Bot Source](https://github.com/ReubenDollmanYT/Reuben-Economy)\n[Bean Economy](https://github.com/kyle95wm/bean-economy)\n[RogueWorshipLeader](https://github.com/thewilloftheshadow/RogueWorshipLeader)', inline: true },
         )
 		.setTimestamp()
-		message.channel.send({ embeds: [info] });
+		message.channel.send({ embeds: [info], reply: {
+    messageReference: message,
+    failIfNotExists: false
+}, allowedMentions: {
+    repliedUser: true
+} });
 	},
 };

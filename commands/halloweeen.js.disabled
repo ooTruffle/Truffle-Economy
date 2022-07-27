@@ -25,7 +25,7 @@ module.exports = {
         const payout = random(100,200);
         await message.client.unb.editUserBalance(message.guild.id, message.author.id, {cash:payout}, "Happy Halloween")//tells the api to increase the users cash balence
         addCooldown("halloween", message.guild.id, message.author.id, 1 * 1800); //adds a cooldown to the DB 
-        const halloween = new Discord.MessageEmbed()
+        const Halloween = new Discord.MessageEmbed()
         .setColor('#ff9a00')
         .setDescription(`Happy Halloween here is ${payout} <a:Beachball:727421930873028638>`)
         .setTimestamp()
