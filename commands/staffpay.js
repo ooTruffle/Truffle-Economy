@@ -19,7 +19,7 @@ module.exports = {
 			.setColor('#00bfff')
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
-			.setFooter('Reply by ooTruffle', 'https://cdn.discordapp.com/avatars/781305692371157034/a6e13267c3a1ef4814d1524a8808b226.png' );
+			.setFooter('Reply by ooTruffle', 'https://truffle.signed.host/nDgQb.jpeg' );
 			message.channel.send({ embeds: [cooldown], reply: {
     messageReference: message,
     failIfNotExists: false
@@ -35,7 +35,7 @@ module.exports = {
         .setColor('#00bfff')
         .setDescription(`Thanks for being a awsome staff member here is ${payout} ${unbemote}`)
         .setTimestamp()
-		.setFooter('Reply by ooTruffle', 'https://cdn.discordapp.com/avatars/781305692371157034/a6e13267c3a1ef4814d1524a8808b226.png' );
+		.setFooter('Reply by ooTruffle', 'https://truffle.signed.host/nDgQb.jpeg' );
         message.channel.send({ embeds: [staffpay], reply: {
     messageReference: message,
     failIfNotExists: false
