@@ -31,10 +31,7 @@ for (const file of eventFiles) {
 	}
 }
 
-//Bot Status
-client.on('ready', () => {
-client.user.setActivity(`People Empty there balance || re!help`, { type: 'WATCHING' });
-});
+
 // Listening for messages
 client.on('messageCreate', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
