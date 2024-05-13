@@ -19,7 +19,7 @@ module.exports = {
 			.setColor('#00bfff')
 			.setDescription(`Sorry you still have a cooldown`)
 			.setTimestamp()
-			.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/e861f992cbe863696736c0227c78e279.png?size=1024' );
+			.setFooter('Reply by ooTruffle', 'https://cdn.discordapp.com/avatars/781305692371157034/e861f992cbe863696736c0227c78e279.png?size=1024' );
 			message.channel.send({ embeds: [cooldown] });
             return;
         }
@@ -30,7 +30,7 @@ module.exports = {
         .setColor('#00ff6c')
         .setDescription(`You opened a gift and got ${payout} ${unbemote}`)
         .setTimestamp()
-		.setFooter('Reply by ReubenDollmanYT#4106', 'https://cdn.discordapp.com/avatars/781305692371157034/e861f992cbe863696736c0227c78e279.png?size=1024' );
+		.setFooter('Reply by ooTruffle', 'https://cdn.discordapp.com/avatars/781305692371157034/e861f992cbe863696736c0227c78e279.png?size=1024' );
         message.channel.send({ embeds: [christmas] });
     },
 }; 

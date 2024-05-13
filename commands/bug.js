@@ -9,7 +9,7 @@ module.exports = {
         .addFields(
             { name: 'Think you have found a bug', value: 'Keep in mind the cooldowns not working is a bug im currently working on fixing **dont report it**', inline: true },
 			{ name: '\u200B', value: '\u200B' },// adds a gap betwen the next line
-			{ name: 'Make a issue on the offical repo', value: 'https://github.com/ReubenDollmanYT/Reuben-Economy/issues', inline: true },     
+			{ name: 'Make a issue on the offical repo', value: 'https://github.com/ooTruffle/Truffle-Economy/issues', inline: true },     
 		)
 		.setTimestamp()
 		message.channel.send({ embeds: [bug] });

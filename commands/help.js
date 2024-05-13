@@ -18,12 +18,12 @@ module.exports = {
         .setColor('#00bfff')
         .setDescription(`Unb giveing Commands`)
         .addFields(
-            { name: prefix + 'work', value: 'Ever 30M', inline: true },
-            { name: prefix + 'daily', value: 'Ever 24H', inline: true },
-            { name: prefix + 'hourly', value: 'Ever 1H', inline: true },
-            { name: prefix + 'ally', value: 'Ever 24H', inline: true },
-            { name: prefix + 'partner', value: 'Ever 24H', inline: true },
-            { name: prefix + 'staffpay', value: 'Ever 24H', inline: true },
+            { name: prefix + 'work', value: 'Every 30M', inline: true },
+            { name: prefix + 'daily', value: 'Every 24H', inline: true },
+            { name: prefix + 'hourly', value: 'Every 1H', inline: true },
+            { name: prefix + 'ally', value: 'Every 24H', inline: true },
+            { name: prefix + 'partner', value: 'Every 24H', inline: true },
+            { name: prefix + 'staffpay', value: 'Every 24H', inline: true },
         ) //add's a gap between each command
 		.setTimestamp()
 		.setFooter('Prefix is ' + prefix );
