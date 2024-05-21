@@ -4,7 +4,7 @@ module.exports = {
     name: 'index',
     description: 'cmd cooldowns',
     async execute(message) {
-    var content = ["daily","hourly","work","vip","ally","partner","nitro", "staffpay"].map(e=>{
+    var content = ["daily","hourly","work","ally","partner","nitro", "staffpay"].map(e=>{
     var cooldown = getCooldown(e, message.guild.id, message.author.id);
     if(cooldown == null) return [0, "🟢 "+e]; // Pass some info into the next part, so it knows how to sort the commands
     else return [1, "🟡 "+e+" - <t:"+Math.floor(new Date(cooldown.endsat).getTime()/1000)+":R>"]; // Showing the cooldown as a Discord timestamp should make this easier
@@ -19,7 +19,6 @@ const infoindex = new Discord.MessageEmbed()
 			.setColor('#00ff47')
 			.setDescription(`🟢 Means you dont have a cooldown and the command can be ran \n🟡 Means there is a active cooldown \nThis code will say you dont have a cooldown on comands you cant run insted of a 🔴`)
 			.setTimestamp()
-			.setFooter('Cooldowns being broken is a known bug' );
 			message.channel.send({ embeds: [infoindex] });
 }
 }

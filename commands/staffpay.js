@@ -25,7 +25,7 @@ module.exports = {
     failIfNotExists: false
 }, allowedMentions: {
     repliedUser: false
-} }); //send the embed to the channel the command was ran in
+} }); 
             return;
         }
         const payout = random(200,400);
